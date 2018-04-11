@@ -1,0 +1,43 @@
+<table border="1" cellspacing="0" cellpadding="10px">
+    <tr padding="0">
+        <td> 
+            Miesta :
+        </td>
+        {{#each places}}
+            <td>
+                {{this.name}} <br>
+            </td>
+        {{/each}}
+    </tr>
+    <tr>
+        <td> 
+            Kategórie :
+        </td>
+            {{#each cats}}
+        <td>
+    {{this.name}} <br>
+    </td>
+    {{/each}}
+    </tr>
+    <tr>
+    <td> 
+    Stuff :
+    </td>
+    {{#each stuff}}
+    <td>
+    {{this.nazov}} <br>
+    </td>
+    {{/each}}
+    </tr>
+    <tr>
+    <td> 
+    Používatelia :
+    {{#each users}}
+    <td>
+    {{this.login}} <br>
+    </td>
+    {{/each}}
+    </td>
+    </tr>
+
+</table>
