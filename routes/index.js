@@ -1,7 +1,8 @@
 import express from 'express'
 import {toArray} from 'lodash'
 import knex from '../knex'
-import {API_MENO_AHOJ} from '../constants/routes'
+import requireToken from '../middlewares'
+import {API_MENO_AHOJ, API_QR_USER} from '../constants/routes'
 
 const router = express.Router()
 
@@ -18,6 +19,12 @@ router.get('/', async (req, res) => {
 router.get(API_MENO_AHOJ, (req, res) => {
   const {name} = req.params
   res.render('index', {title: 'Ahoj', params: name})
+})
+
+router.get(API_QR_USER, (req, res) => {
+  requireToken()
+  const params = 'xyz'
+  res.render('show_qr', {params})
 })
 
 export default router
