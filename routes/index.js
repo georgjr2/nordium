@@ -1,7 +1,7 @@
 import express from 'express'
 import {toArray} from 'lodash'
 import knex from '../knex'
-import requireToken from '../middlewares'
+import {catchExceptions} from '../middlewares'
 import {API_MENO_AHOJ, API_QR_USER} from '../constants/routes'
 
 const router = express.Router()
@@ -21,10 +21,21 @@ router.get(API_MENO_AHOJ, (req, res) => {
   res.render('index', {title: 'Ahoj', params: name})
 })
 
-router.get(API_QR_USER, (req, res) => {
-  requireToken()
-  const params = 'xyz'
-  res.render('show_qr', {params})
-})
+const mapQRidToId = (QRid) => QRid
+
+router.get(API_QR_USER,
+  // RequireToken(),
+  catchExceptions(async (req, res) => {
+    const {QRid} = req.params
+    // If(QRid === 'style.css'){res.send(style)}
+    const id = mapQRidToId(QRid)
+    const data = await knex.select().from('stuff').where('id', id).first()
+    res.render('show_qr', {
+      data,
+      foto1: `data:image/jpeg;base64,${data.foto1.toString('base64')}`,
+      foto2: `data:image/jpeg;base64,${data.foto2.toString('base64')}`,
+    })
+  })
+)
 
 export default router

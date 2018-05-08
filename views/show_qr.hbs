@@ -1,1 +1,33 @@
-{{params}}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>QR bolo naskenované</title>
+</head>
+<body>
+    <img src="{{foto1}}" alt="Foto-{{data.nazov}}" height="256px"> <br>
+Názov : {{data.nazov}} <br>
+Umiestenie : {{data.umiestnenie}} <br>
+<button onclick="show()" id="button">Podrobnosti</button>
+<div id="tohide" style="display:none;">
+Popis : {{data.popis}} <br>
+Kategória : {{data.kategoria}} <br>
+{{#if data.euprojektoznacenie}} EU projekt označenie : {{data.euprojektoznacenie}} <br>{{/if}}
+{{#if data.poznamka}} Poznámka : {{data.poznamka}}<br>   {{/if}}
+<img src="{{foto2}}" alt="Foto2-{{data.nazov}}" height="256px"> <br>
+</div>
+
+
+<script>
+function show() {
+    var x = document.getElementById("tohide");
+    if (x.style.display === "none") {
+        x.style.display = "block";
+    } else {
+        x.style.display = "none";
+    }
+}
+</script>
+</body>
+</html>

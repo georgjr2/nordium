@@ -1,0 +1,12 @@
+Pre stuff :
+nazov, umiestnenie
+foto
+<Tlačidlo detail>
+popis, kategoria, foto2, euprojektoznacenie, poznamka
+
+
+výpis podľa kategorie
+
+výpis podla umiestnenia
+
+výpis podla euprojektu
