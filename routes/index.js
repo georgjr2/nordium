@@ -1,8 +1,8 @@
 import express from 'express'
 import {toArray} from 'lodash'
 import knex from '../knex'
-import {catchExceptions} from '../middlewares'
-import {API_MENO_AHOJ, API_QR_USER} from '../constants/routes'
+import requireToken from '../middlewares'
+import {API_MENO_AHOJ, API_QR_USER, API_ADD_FORM} from '../constants/routes'
 
 const router = express.Router()
 
@@ -37,5 +37,16 @@ router.get(API_QR_USER,
     })
   })
 )
+
+router.get(API_ADD_FORM, async (req, res) => {
+  const kategorie = toArray(await knex.select().from('categories'))
+  const umiestnenia = toArray(await knex.select().from('places'))
+  res.render('add_form', {kategorie, umiestnenia})
+})
+
+router.post(API_ADD_FORM, async (req, res) => {
+  await knex('stuff').insert(req.body)
+  res.render('add_form')
+})
 
 export default router
