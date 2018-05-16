@@ -6,4 +6,4 @@
 
 #### Run
 
-`yarn run start`
+`yarn run watch`
