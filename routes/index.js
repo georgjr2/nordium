@@ -5,8 +5,8 @@ import getRouter from './get'
 import editRouter from './edit'
 import listRouter from './list'
 import knex from '../knex'
-import requireToken from '../middlewares'
-import {API_MENO_AHOJ, API_QR_USER} from '../constants/routes'
+import {catchExceptions} from '../middlewares'
+import {API_QR_USER} from '../constants/routes'
 
 const router = express.Router()
 
@@ -25,10 +25,6 @@ router.use(getRouter)
 router.use(editRouter)
 router.use(listRouter)
 
-router.get(API_MENO_AHOJ, (req, res) => {
-  const {name} = req.params
-  res.render('index', {title: 'Ahoj', params: name})
-})
 
 const mapQRidToId = (QRid) => QRid
 
