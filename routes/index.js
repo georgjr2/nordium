@@ -1,8 +1,12 @@
 import express from 'express'
 import {toArray} from 'lodash'
+import addRouter from './add'
+import getRouter from './get'
+import editRouter from './edit'
+import listRouter from './list'
 import knex from '../knex'
 import {catchExceptions} from '../middlewares'
-import {API_MENO_AHOJ, API_QR_USER} from '../constants/routes'
+import {API_QR_USER} from '../constants/routes'
 
 const router = express.Router()
 
@@ -16,10 +20,11 @@ router.get('/', async (req, res) => {
   res.render('index', {title: 'Ahoj', places, cats, stuff, users})
 })
 
-router.get(API_MENO_AHOJ, (req, res) => {
-  const {name} = req.params
-  res.render('index', {title: 'Ahoj', params: name})
-})
+router.use(addRouter)
+router.use(getRouter)
+router.use(editRouter)
+router.use(listRouter)
+
 
 const mapQRidToId = (QRid) => QRid
 
