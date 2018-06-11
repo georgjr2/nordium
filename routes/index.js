@@ -13,11 +13,10 @@ const router = express.Router()
 /* GET home page. */
 
 router.get('/', async (req, res) => {
-  const places = toArray(await knex.select().from('places'))
-  const cats = toArray(await knex.select().from('categories'))
-  const stuff = toArray(await knex.select().from('stuff'))
-  const users = toArray(await knex.select().from('users'))
-  res.render('index', {title: 'Ahoj', places, cats, stuff, users})
+  const seeds = toArray(await knex.select().from('seeds'))
+  const food = toArray(await knex.select().from('food'))
+  const suppliers = toArray(await knex.select().from('supplier'))
+  res.render('index', {title: 'Ahoj', seeds, food, suppliers})
 })
 
 router.use(addRouter)
@@ -34,11 +33,12 @@ router.get(API_QR_USER,
     const {QRid} = req.params
     // If(QRid === 'style.css'){res.send(style)}
     const id = mapQRidToId(QRid)
-    const data = await knex.select().from('stuff').where('id', id).first()
+    console.log(id)
+    const data = await knex.select().from('seeds').where('SeedID', id).first()
     res.render('show_qr', {
       data,
-      foto1: `data:image/jpeg;base64,${data.foto1.toString('base64')}`,
-      foto2: `data:image/jpeg;base64,${data.foto2.toString('base64')}`,
+      // foto1: `data:image/jpeg;base64,${data.foto1.toString('base64')}`,
+      // foto2: `data:image/jpeg;base64,${data.foto2.toString('base64')}`,
     })
   })
 )

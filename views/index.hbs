@@ -1,43 +1,33 @@
 <table border="1" cellspacing="0" cellpadding="10px">
     <tr padding="0">
         <td> 
-            Miesta :
+            Semienka :
         </td>
-        {{#each places}}
+        {{#each seeds}}
             <td>
-                {{this.name}} <br>
+                {{this.Name}} <br>
             </td>
         {{/each}}
     </tr>
     <tr>
         <td> 
-            Kategórie :
+            Živiny :
         </td>
-            {{#each cats}}
+            {{#each food}}
         <td>
-    {{this.name}} <br>
+    {{this.Name}} <br>
     </td>
     {{/each}}
     </tr>
     <tr>
     <td> 
-    Stuff :
+    Dodávatelia :
     </td>
-    {{#each stuff}}
+    {{#each suppliers}}
     <td>
-    {{this.nazov}} <br>
+    {{this.CompanyName}} <br>
     </td>
     {{/each}}
     </tr>
-    <tr>
-    <td> 
-    Používatelia :
-    {{#each users}}
-    <td>
-    {{this.login}} <br>
-    </td>
-    {{/each}}
-    </td>
-    </tr>
-
+    
 </table>

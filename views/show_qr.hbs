@@ -6,16 +6,17 @@
     <title>QR bolo naskenované</title>
 </head>
 <body>
-    <img src="{{foto1}}" alt="Foto-{{data.nazov}}" height="256px"> <br>
-Názov : {{data.nazov}} <br>
-Umiestenie : {{data.umiestnenie}} <br>
+    {{!-- <img src="{{foto1}}" alt="Foto-{{data.nazov}}" height="256px"> <br> --}}
+    <br>
+Názov : {{data.Name}} <br>
+Umiestenie : {{data.IDPosition}} <br> <br>
 <button onclick="show()" id="button">Podrobnosti</button>
 <div id="tohide" style="display:none;">
-Popis : {{data.popis}} <br>
-Kategória : {{data.kategoria}} <br>
-{{#if data.euprojektoznacenie}} EU projekt označenie : {{data.euprojektoznacenie}} <br>{{/if}}
+Typ semena : {{data.TypeSeed}} <br>
+Kultivácia : {{data.Cultivation}} <br>
+{{!-- {{#if data.euprojektoznacenie}} EU projekt označenie : {{data.euprojektoznacenie}} <br>{{/if}}
 {{#if data.poznamka}} Poznámka : {{data.poznamka}}<br>   {{/if}}
-<img src="{{foto2}}" alt="Foto2-{{data.nazov}}" height="256px"> <br>
+<img src="{{foto2}}" alt="Foto2-{{data.nazov}}" height="256px"> <br> --}}
 </div>
 
 

@@ -1,5 +1,5 @@
 export const API_INDEX = '/'
-export const API_QR_USER = '/code'
+export const API_QR_USER = '/code/:QRid'
 export const API_ADD_STUFF = '/stuff'
 export const API_ADD_CATEGORY = '/category'
 export const API_ADD_PLACE = '/place'
