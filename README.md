@@ -10,11 +10,11 @@
 
 ## Currently working
 
-*Adding stuff*
+*Adding*
 
 `localhost:5000/stuff`
 
 
-*List of product*
+*List of seeds*
 
-`localhost:5000/qr/:id`
+`localhost:5000/code/:QRid`
