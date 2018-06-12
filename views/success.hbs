@@ -1,0 +1,15 @@
+<h1>Pridanie / editovanie bolo úspešné</h1>
+
+<button onclick="show()" id="button">Podrobnosti</button>
+<span id="tohide" style="display:none;">Dáta: {{json}}</span>
+
+<script>
+function show() {
+    var x = document.getElementById("tohide");
+    if (x.style.display === "none") {
+        x.style.display = "block";
+    } else {
+        x.style.display = "none";
+    }
+}
+</script>

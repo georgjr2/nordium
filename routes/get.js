@@ -6,23 +6,35 @@ import knex from '../knex'
 import * as routes from '../constants/routes'
 
 const getRouter = express.Router()
-let humid
-let temp
+let spliting
 
-getRouter.get(routes.API_ADD_STUFF, async (req, res) => {
-  const kategorie = toArray(await knex.select().from('categories'))
-  const umiestnenia = toArray(await knex.select().from('places'))
-  res.render('add_stuff', {kategorie, umiestnenia})
+getRouter.get(routes.API_ADD_SEEDS, async (req, res) => {
+  const kategorie = toArray(await knex.select().from('supplier'))
+  const umiestnenia = toArray(await knex.select().from('position'))
+  res.render('add_seeds', {kategorie, umiestnenia})
+})
+
+getRouter.get(routes.API_ADD_SUPPLIER, async (req, res) => {
+  res.render('add_supplier', {kategorie, umiestnenia})
+})
+
+getRouter.get(routes.API_ADD_POSITION, async (req, res) => {
+  res.render('add_position', {kategorie, umiestnenia})
+})
+
+getRouter.get(routes.API_ADD_FOOD, async (req, res) => {
+  res.render('add_food', {kategorie, umiestnenia})
 })
 
 
 getRouter.get(routes.API_SHOW_SENSOR, async (req, res) => {
   await get('http://192.168.88.202:3000/senzor', (err, res) => {
-    if (err) createError(400)
+    if (err) createError(500)
     const combin = (res.buffer).toString('utf-8')
-    humid = combin.split(',')
+    spliting = combin.split(',')
   })
-  res.render('sensors', {temp: Number(humid[0]).toFixed(2), humid: Number(humid[1]).toFixed(2)})
+  res.render('sensors', {temp: Number(spliting[0]).toFixed(2), humid: Number(spliting[1]).toFixed(2)})
 })
+
 
 export default getRouter
