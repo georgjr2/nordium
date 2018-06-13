@@ -1,116 +1,158 @@
-body {
-margin: 0;
-padding: 0;
-margin: auto;
-font-family: 'Noto Sans', sans-serif;
-}
-
-header {
-display: grid;
-grid-template-columns: 1fr 1fr 1fr;
-grid-gap: 5px;
-color: #444;
-align-items: center;
-justify-items: center;
-
-}
-
-.login {
-
-display: grid;
-grid-gap: 5px;
-color: white;
-align-items: stretch;
-justify-items: center; 
-height: 370px;
-grid-template-rows: 0fr 0.3fr 0fr 0fr; 
-}
-.password {
-
-display: grid;
-grid-gap: 5px;
-color: white;
-align-items: stretch;
-justify-items: center; 
-height: 370px;
-grid-template-rows: 0fr 0.3fr 0fr 0fr 0fr; 
-}
-
-.box {
-
-color: #fff;
-font-size: 26pt;
-
-
-}
-.img {
-width: 150px;
-height: auto;
-}
-section {
-
-
-}
-
-main {
-
- background: linear-gradient(to bottom right, #64FFF0, #B3F264, #FFFF6E) no-repeat center center fixed;
-
--webkit-background-size: cover;
--moz-background-size: cover;
--o-background-size: cover;
-background-size: cover;
-}
-
-
-}
-input {
-background-color: transparent;
-border: none;
-
-}
-.border{
- border-bottom: 2px solid white;
-padding-bottom: 3px;
-margin-bottom: 10px;
-
-}
-footer {
-  display: grid;
-grid-gap: 5px;
-color: #444;
-align-items: stretch;
-justify-items: center; 
-
-grid-template-rows: 1fr 0.5fr;
-
-}
-.submit {
-margin-top: 50px;
-padding-top: 15px;
-padding-bottom: 15px;
-padding-left: 70px;
-padding-right: 70px;
-font-size: 12pt;
-color: white;
- background: linear-gradient(to bottom right, #64FFF0, #B3F264, #FFFF6E);
-border-radius: 30px;
-}
-.spodne {
-color: black;
-font-size: 8pt;
-}
-.spodne2 {
-color: #B3F264;
-font-size: 8pt;
-
-}
-p {      
-color: white;
-font-size: 12pt;
-}
-::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
-color: white;}
-input, select, textarea, password {
-color: white;
-}
+@media (min-width: 900px) {
+  .boxa {
+   display: none;
+ }
+     .boxc {
+         display: none;
+     }
+     header {
+   display: grid;
+   grid-gap: 5px;
+   color: #444;
+   align-items: center;
+   justify-items: center;
+   grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+ }
+ .boxbig {
+   color: #fff;
+   font-size: 12pt;
+     }
+     a {
+         color: white;
+         text-decoration: none;
+     }
+ }
+ 
+ @media (max-width: 899px) {
+         header {
+   display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+   grid-gap: 5px;
+   color: #444;
+   align-items: center;
+   justify-items: center;
+         }
+ .boxa {
+   color: #fff;
+   font-size: 26pt;
+ }
+ .boxc {
+   color: #fff;
+   font-size: 26pt;
+ }
+     .boxbig {
+         display: none;
+     }
+ 
+          
+     }    
+   
+   
+ body {
+     margin: 0;
+     padding: 0;
+     margin: auto;
+     font-family: 'Noto Sans', sans-serif;
+ }
+ 
+ 
+ 
+ .login {
+ 
+   display: grid;
+   grid-gap: 5px;
+   color: white;
+   align-items: stretch;
+   justify-items: center; 
+     height: 370px;
+   grid-template-rows: 0fr 0.3fr 0fr 0fr; 
+ }
+ .password {
+ 
+   display: grid;
+   grid-gap: 5px;
+   color: white;
+   align-items: stretch;
+   justify-items: center; 
+     height: 370px;
+   grid-template-rows: 0fr 0.3fr 0fr 0fr 0fr; 
+ }
+ 
+ .box {
+  
+   color: #fff;
+   font-size: 26pt;
+    
+   
+ }
+ .img {
+     width: 150px;
+     height: auto;
+ }
+ section {
+  
+     
+ }
+ 
+ main {
+  
+      background: linear-gradient(to bottom right, #64FFF0, #B3F264, #FFFF6E) no-repeat center center fixed;
+    
+     -webkit-background-size: cover;
+   -moz-background-size: cover;
+   -o-background-size: cover;
+   background-size: cover;
+ }
+ 
+    
+ }
+ input {
+     background-color: transparent;
+    border: none;
+ 
+ }
+ .border{
+      border-bottom: 2px solid white;
+     padding-bottom: 3px;
+     margin-bottom: 10px;
+   
+ }
+ footer {
+       display: grid;
+   grid-gap: 5px;
+   color: #444;
+   align-items: stretch;
+   justify-items: center; 
+     
+   grid-template-rows: 1fr 0.5fr;
+   
+ }
+ .submit {
+   margin-top: 50px;
+   padding-top: 15px;
+   padding-bottom: 15px;
+   padding-left: 70px;
+   padding-right: 70px;
+     font-size: 12pt;
+     color: white;
+      background: linear-gradient(to bottom right, #64FFF0, #B3F264, #FFFF6E);
+     border-radius: 30px;
+ }
+ .spodne {
+     color: black;
+     font-size: 8pt;
+ }
+ .spodne2 {
+     color: #B3F264;
+     font-size: 8pt;
+  
+ }
+ p {      
+     color: white;
+     font-size: 12pt;
+ }
+ ::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+     color: white;}
+ input, select, textarea, password {
+ color: white;
+ }

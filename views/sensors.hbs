@@ -1,2 +1,33 @@
-<h1> Teplota je : {{temp}}°C</h1> <br>
-<h2> A vlhkosť : {{humid}}%</h2>
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Informacie o senzoroch</title>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+   
+    <link rel="stylesheet" href="stylesheets/rasp.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous">
+      <link href="https://fonts.googleapis.com/css?family=Noto+Sans" rel="stylesheet">
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+  </head>
+  <body>
+      {{> header }}
+      <main>
+          
+          <section>
+          Teplota: {{temp}}°C
+          </section>
+          
+          
+     
+          <section>
+          Vhkosť: {{humid}}%
+          </section>
+        
+     
+            
+
+      
+      </main>
+  </body>
+</html>

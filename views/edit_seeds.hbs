@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Upravenie semena</title>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+   
+    <link rel="stylesheet" href="../stylesheets/pridanie.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous">
+      <link href="https://fonts.googleapis.com/css?family=Noto+Sans" rel="stylesheet">
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+  </head>
+  <body>
+    {{> header }}
+    <form method="post">
+      <main id="add">
+        <section class="prva">Upravenie semena: {{current.Name}}</section>
+        <section>Name:<input type="text" name="Name" placeholder="{{current.Name}}" style="background-color: transparent; border: none; border-bottom: 1px solid white; color: white;"require></section>
+          <section>LatinName:<input type="text" name="LatinName" placeholder="{{current.LatinName}}" style="background-color: transparent; border: none; border-bottom: 1px solid white; color: white;"></section>
+          <section>Seed type: <input type="radio" name="TypeSeed" value="1" {{#ifCond current.TypeSeed '' 'Monocot'}} checked {{/ifCond}}>Monocot
+                    <input type="radio" name="TypeSeed" value="2" {{#ifCond current.TypeSeed '' 'Dicot'}} checked {{/ifCond}}>Dicot
+          </section>
+          <section>Cultivation:<br>
+          <input type="radio" name="Cultivation" value="1" {{#ifCond current.Cultivation '' 'Crop'}} checked {{/ifCond}} >Crop
+          <input type="radio" name="Cultivation" value="2"{{#ifCond current.Cultivation '' 'Ornamental plant'}} checked {{/ifCond}} >Ornamental plant
+          <input type="radio" name="Cultivation" value="3"{{#ifCond current.Cultivation '' 'Other'}} checked {{/ifCond}} >Other
+          </section>
+          <section>Evolvement:
+          <select name="IdEvolvement">
+                <option value="1" {{#ifCond current.IdEvolvement '' 'Algae'}} selected="selected" {{/ifCond}}>Algae</option>
+                <option value="2"{{#ifCond current.IdEvolvement '' 'Archaeplastida'}} selected="selected" {{/ifCond}}>Archaeplastida</option>
+                <option value="3"{{#ifCond current.IdEvolvement '' 'Bryophyte'}} selected="selected" {{/ifCond}}>Bryophyte</option>
+                <option value="4"{{#ifCond current.IdEvolvement '' 'Non-vascular plants'}} selected="selected" {{/ifCond}}>Non-vascular plants</option>
+                <option value="5"{{#ifCond current.IdEvolvement '' 'Vascular plants'}} selected="selected" {{/ifCond}}>Vascular plants</option>
+              <option value="6"{{#ifCond current.IdEvolvement '' 'Spermatophytes'}} selected="selected" {{/ifCond}}>Spermatophytes</option>
+              <option value="7"{{#ifCond current.IdEvolvement '' 'Pteridophyte'}} selected="selected" {{/ifCond}}>Pteridophyte</option>
+              <option value="8"{{#ifCond current.IdEvolvement '' 'Gymnosperm Angiosperm'}} selected="selected" {{/ifCond}}>Gymnosperm Angiosperm</option>
+          
+          </select>
+        </section>
+            <section>
+          Food:<select name="IdFood">
+            {{#each food}}
+            <option value="{{this.ID}}" {{#ifCond current.IdFood '' '2'}} checked {{/ifCond}}>{{this.Name}}</option>
+            {{/each}}
+        </select>
+          </section>
+          
+          <section>
+          Country:<select name="Country">
+            {{#each country}}
+            <option value="{{this.ID}}" {{#ifCond current.Country '' this.ID}} selected="selected" {{/ifCond}}>{{this.country_name}}</option>
+            {{/each}}
+        </select>
+          </section>
+          
+          <section>
+          Supplier:<select name="IDSupplier">
+            {{#each supplier}}
+            <option value="{{this.ID}} {{#ifCond current.IDSupplier '' this.ID}} selected="selected" {{/ifCond}}">{{this.CompanyName}}</option>
+            {{/each}}
+        </select>
+          </section>
+          
+          <section>
+          Date of supply:<input type="date" name="DateSupply" style="background-color: transparent; border: none; border-bottom: 1px solid white; color: white;"require>
+          </section>
+      
+          <section>Size of bag:
+          <input type="radio" name="SizeOfBag" value="1" {{#ifCond current.SizeOfBag '' 'S'}} checked {{/ifCond}}>S
+          <input type="radio" name="SizeOfBag" value="2" {{#ifCond current.SizeOfBag '' 'M'}} checked {{/ifCond}}>M
+          <input type="radio" name="SizeOfBag" value="3" {{#ifCond current.SizeOfBag '' 'L'}} checked {{/ifCond}}>L
+          </section>
+          
+          <section>Position:
+        <select name="IDPosition">
+            {{#each position}}
+            <option value="{{this.ID}}">{{this.NumbRack}}{{this.NumbShelf}}{{this.FirstLetter}}</option>
+            {{/each}}
+        </select>
+          </section>
+          
+          <section>Life cycle:
+          <input type="radio" name="LifeCycle" value="1" {{#ifCond current.LifeCycle '' 'Annual'}} checked {{/ifCond}}>Annual
+          <input type="radio" name="LifeCycle" value="2"{{#ifCond current.LifeCycle '' 'Biennial'}} checked {{/ifCond}}>Biennial
+          <input type="radio" name="LifeCycle" value="3"{{#ifCond current.LifeCycle '' 'Perennial'}} checked {{/ifCond}}>Perennial
+          </section>
+          
+          <section class="submit">
+        <button type="submit" style=" border: none; color: #B3F264;">Upraviť</button>
+        </section>
+      
+      </main>
+      </form>
+  </body>
+</html>

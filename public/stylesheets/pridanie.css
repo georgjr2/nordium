@@ -1,0 +1,81 @@
+::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+    color: white!important;
+    opacity: 1; /* Firefox */
+    font-size: 14pt;
+}
+input {
+    margin-left: 10px;
+}
+@media (min-width: 900px) {
+    main {column-count: 3;
+    grid-template-columns: 1fr 1fr 1fr;
+        }
+    .prva {
+        grid-column-start: 1;
+        color: white;
+        font-size: 20pt;
+        border-bottom: 1px solid white;
+        padding-bottom: 5px;
+        grid-column-end:   4;
+    }
+    }
+    @media (max-width: 899px) {
+        main {
+        column-count: 1;
+        justify-items: center;
+        }
+        .prva {
+        color: white;
+        font-size: 20pt;
+        border-bottom: 1px solid white;
+        padding-bottom: 5px;
+        }
+    }
+    input[type=text]:focus {
+        outline: 1px solid white;
+    }
+
+    option {
+        background: #B3F264;
+    }
+    
+    main {
+      max-width: 1000px;
+      display: grid;
+      grid-gap: 20px;
+      color: transparent;
+      margin: 0 auto;
+    }
+    
+    body {
+    background: linear-gradient(to bottom right, #64FFF0, #B3F264, #FFFF6E) no-repeat center center fixed;
+        -webkit-background-size: cover;
+      -moz-background-size: cover;
+      -o-background-size: cover;
+      background-size: cover;
+    }
+    
+    section {
+        break-inside: avoid;
+        color: white;
+        font-size: 12pt;
+    }
+    select {
+        color: white;
+        background-color: transparent;
+        border: 1px solid white;
+    }
+   button[type=submit] {
+
+      margin-top: 50px;
+      padding: 15px 70px 15px 70px;
+        font-size: 16pt;
+        background: white;
+        border-radius: 30px;
+        cursor: pointer;
+        justify-self: center;
+    }
+    #add {
+        font-weight: bold!important;
+        font-family: 'Noto Sans', sans-serif;
+    }

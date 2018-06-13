@@ -5,6 +5,9 @@ import * as routes from '../constants/routes'
 
 const addRouter = express.Router()
 
+addRouter.post(routes.API_INDEX, async (req, res) => {
+  res.render('root')
+})
 
 addRouter.post(routes.API_ADD_SEEDS, async (req, res) => {
   const {body} = req

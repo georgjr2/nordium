@@ -1,0 +1,32 @@
+main {
+    max-width: 1000px;
+    display: grid;
+    grid-gap: 20px;
+    color: transparent;
+    margin: 0 auto;
+    color: white;
+    justify-content: center;
+  }
+  
+  body {
+  background: linear-gradient(to bottom right, #64FFF0, #B3F264, #FFFF6E) no-repeat center center fixed;
+      -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+       font-family: 'Noto Sans', sans-serif;
+  }
+  
+  table {
+      width: 100%;
+  }
+  
+  a {
+      color: white;
+  }
+  td {
+      padding: 20px 15px;
+      border-bottom: 1px solid white;
+   
+      
+  }

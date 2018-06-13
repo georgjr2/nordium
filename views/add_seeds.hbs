@@ -1,31 +1,97 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
-    
-</head>
-<body>
-    <form method="post" style="margin: 0, auto; width: 500px;">
-        <label for="nazov">Zadajte názov: </label>
-        <input id="nazov" type="text" name="nazov" placeholder="username"> <br>
-        <label for="umiestnenie">Umiestnenie : </label>
-        <select name="umiestnenie">
-            {{#each umiestnenia}}
-            <option value="{{this.name}}">{{this.name}}</option>
+<html>
+  <head>
+    <title>Pridanie semena</title>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+   
+    <link rel="stylesheet" href="../stylesheets/pridanie.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous">
+      <link href="https://fonts.googleapis.com/css?family=Noto+Sans" rel="stylesheet">
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+  </head>
+  <body>
+    {{> header }}
+    <form method="post">
+      <main id="add">
+        <section class="prva">Pridanie semena</section>
+        <section>Name:<input type="text" name="Name" style="background-color: transparent; border: none; border-bottom: 1px solid white; color: white;"require></section>
+          <section>LatinName:<input type="text" name="LatinName" style="background-color: transparent; border: none; border-bottom: 1px solid white; color: white;"></section>
+          <section>Seed type: <input type="radio" name="TypeSeed" value="1">Monocot
+                    <input type="radio" name="TypeSeed" value="2">Dicot
+          </section>
+          <section>Cultivation:<br>
+          <input type="radio" name="Cultivation" value="1">Crop
+          <input type="radio" name="Cultivation" value="2">Ornamental Plant
+          <input type="radio" name="Cultivation" value="3">Other
+          </section>
+          <section>Evolvement:
+          <select name="IdEvolvement">
+                <option value="1">Algae</option>
+                <option value="2">Archaeplastida</option>
+                <option value="3">Bryophyte</option>
+                <option value="4">Non-vascular plants</option>
+                <option value="5">Vascular plants</option>
+              <option value="6">Spermatophytes</option>
+              <option value="7">Pteridophyte</option>
+              <option value="8">Gymnosperm Angiosperm</option>
+          
+          </select>
+        </section>
+            <section>
+          Food:<select name="IDFood">
+            {{#each food}}
+            <option value="{{this.ID}}">{{this.Name}}</option>
             {{/each}}
-        </select> <br>  
-        <label for="popis">Popis : </label>
-        <input id="popis" type="text" name="popis">
-        <label for="kategoria">Kategória: </label>
-        <select name="kategoria">
-            {{#each kategorie}}
-            <option value="{{this.name}}">{{this.name}}</option>
+        </select>
+          </section>
+          
+          
+          <section>
+          Country:<select name="Country">
+            {{#each country}}
+            <option value="{{this.ID}}">{{this.country_name}}</option>
             {{/each}}
-        </select> <br>        
-        {{!-- <input id="kategoria" type="text" name="kategoria"> <br> --}}
-        <input type="submit" value="OK">
-    </form>
-</body>
+        </select>
+          </section>
+          
+          <section>
+          Supplier:<select name="IDSupplier">
+            {{#each supplier}}
+            <option value="{{this.ID}}">{{this.CompanyName}}</option>
+            {{/each}}
+        </select>
+          </section>
+          
+          <section>
+          Date of supply:<input type="date" name="DateSupply" style="background-color: transparent; border: none; border-bottom: 1px solid white; color: white;"require>
+          </section>
+      
+          <section>Size of bag:
+          <input type="radio" name="SizeOfBag" value="1">S
+          <input type="radio" name="SizeOfBag" value="2">M
+          <input type="radio" name="SizeOfBag" value="3">L
+          </section>
+          
+          <section>Position:
+        <select name="IDPosition">
+            {{#each position}}
+            <option value="{{this.ID}}">{{this.NumbRack}}{{this.NumbShelf}}{{this.FirstLetter}}</option>
+            {{/each}}
+        </select>
+          </section>
+          
+          <section>Life cycle:
+          <input type="radio" name="LifeCycle" value="1">Annual
+          <input type="radio" name="LifeCycle" value="2">Biennial
+          <input type="radio" name="LifeCycle" value="3">Perennial
+          </section>
+          
+          <section class="submit">
+        <button type="submit" style=" border: none; color: #B3F264;">Pridať</button>
+        </section>
+      
+      </main>
+      </form>
+  </body>
 </html>

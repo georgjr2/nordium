@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Zoznam všetkých</title>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+   
+    <link rel="stylesheet" href="../stylesheets/zoznam.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous">
+      <link href="https://fonts.googleapis.com/css?family=Noto+Sans" rel="stylesheet">
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+  </head>
+  <body>
+      {{> header }}
+      <main>
+          <section>
+            <table>
+              <tr align="center">
+                <td>id</td>
+                <td>Name</td>
+                <td>Type of seed</td>
+                <td>Cultivation</td>
+                <td>Evolvement</td>
+                <td>Food</td>
+                <td>Country</td>
+                <td></td>
+                </tr>
+{{#each seeds}}
+                <tr style="cursor:pointer;"onclick="window.location='/qr/{{this.SeedID}}';">
+                <td>{{this.SeedID}}</td>
+                <td>{{this.Name}}</td>
+                <td>{{this.TypeSeed}}</td>
+                <td>{{this.Cultivation}}</td>
+                <td>{{this.IdEvolvement}}</td>
+                <td>{{this.IdFood}}</td>
+                <td>{{this.Country}}</td>
+                <td><a href="/qr/{{this.SeedID}}">Edit</a></td>
+                </tr>
+{{/each}}
+              
+              </table>
+          
+          </section>
+
+      
+      </main>
+  </body>
+</html>
