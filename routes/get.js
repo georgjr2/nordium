@@ -13,6 +13,10 @@ getRouter.get(routes.API_LIST_SEEDS, async (req, res) => {
   res.render('zoznam', {seeds})
 })
 
+getRouter.get('/index', async (req, res) => {
+  res.render('root')
+})
+
 getRouter.get(routes.API_ADD_SEEDS, async (req, res) => {
   const supplier = toArray(await knex.select().from('supplier'))
   const position = toArray(await knex.select().from('position'))
@@ -56,6 +60,7 @@ getRouter.get(routes.API_EDIT_FOOD, async (req, res) => {
 })
 
 getRouter.get(routes.API_SHOW_SENSOR, async (req, res) => {
+  await get('http://192.168.88.202:3000/senzor', (err, res) => err)
   await get('http://192.168.88.202:3000/senzor', (err, res) => {
     if (err) createError(500)
     const combin = (res.buffer).toString('utf-8')

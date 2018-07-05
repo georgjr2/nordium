@@ -54,7 +54,7 @@ const header = `<style>@media (min-width: 900px) {
 <div class="boxa"><i class="fas fa-angle-left" ></i></div>
 <div class="boxbig"><a href="">VÝSKUMNÉ CENTRUM</a></div>
 <div class="boxbig"><a href="">SVALBARD</a></div>
-<div class="box b"><img class="img" src="Logo.png" /></div>
+<div class="box b"> <a href="/index"><img class="img" src="Logo.png" /> </a></div>
 <div class="boxc"><i class="fas fa-bars"></i></div>
 <div class="boxbig"><a href="">SKLADOVACIE PRIESTORY</a></div>
 <div class="boxbig"><a href="">KONTAKT</a></div>

@@ -1,7 +1,12 @@
-{{> header }}
-<h1>Pridanie / editovanie bolo úspešné</h1>
+<head>
+        <link rel="stylesheet" href="../stylesheets/pridanie.css">
 
-<button onclick="show()" id="button">Podrobnosti</button>
+</head>
+
+{{> header }}
+<h1 style="color:white;">Pridanie / editovanie bolo úspešné</h1>
+
+<button style="border: 0; color:white; background-color:black;" onclick="show()" id="button">Podrobnosti</button>
 <span id="tohide" style="display:none;">Dáta: {{json}}</span>
 
 <script>

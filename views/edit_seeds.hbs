@@ -12,8 +12,9 @@
   </head>
   <body>
     {{> header }}
-    <form method="post">
+    <form method="put">
       <main id="add">
+        
         <section class="prva">Upravenie semena: {{current.Name}}</section>
         <section>Name:<input type="text" name="Name" placeholder="{{current.Name}}" style="background-color: transparent; border: none; border-bottom: 1px solid white; color: white;"require></section>
           <section>LatinName:<input type="text" name="LatinName" placeholder="{{current.LatinName}}" style="background-color: transparent; border: none; border-bottom: 1px solid white; color: white;"></section>
@@ -90,7 +91,9 @@
         <button type="submit" style=" border: none; color: #B3F264;">Upraviť</button>
         </section>
       
+        
       </main>
-      </form>
+        </form>
+      
   </body>
 </html>
